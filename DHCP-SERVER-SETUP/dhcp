@@ -1,0 +1,43 @@
+install server
+
+step 2:
+/etc/dhcp/dbcpd.conf
+copy and paste from
+/usr/share/doc/dhcp-server/
+
+
+3:
+set interface
+/etc/sysconfig/dhcpd
+
+
+4:
+set static ip
+sudo ifconfig enp2s0 192.168.1.1 netmask 255.255.255.0
+
+5.
+sudo systemctl start dhcpd
+
+6.
+connect wire
+
+
+/***** abc.py ******/
+
+import os 
+
+os.system("arp") 
+os.system("scp /home/exam10/Documents/crafter-0.2.tar.gz root@192.168.17.1:/root/Workspace/3208") 
+os.system("scp /home/exam10/qwe.py root@192.168.17.1:/root/Workspace/3208") 
+os.system("ssh root@192.168.17.1 cd Workspace/3208 python qwe.py") 
+
+/***** qwe.py *****/
+import os 
+os.system("tar -xvf crafter-0.2.tar.gz") 
+os.system("cd crafter-0.2") 
+os.system("./configure") 
+os.system("./autogen.sh") 
+os.system("make") 
+os.system("make install") 
+os.system("ldconfig") 
+
